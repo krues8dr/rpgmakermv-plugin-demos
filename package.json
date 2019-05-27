@@ -1,12 +1,37 @@
 {
-    "name": "",
-    "main": "index.html",
-    "js-flags": "--expose-gc",
-    "window": {
-        "title": "",
-        "toolbar": false,
-        "width": 816,
-        "height": 624,
-        "icon": "icon/icon.png"
-    }
+  "name": "Demo",
+  "main": "index.html",
+  "js-flags": "--expose-gc",
+  "window": {
+    "title": "",
+    "toolbar": false,
+    "width": 816,
+    "height": 624,
+    "icon": "icon/icon.png"
+  },
+  "version": "1.0.0",
+  "scripts": {
+    "start": "./node_modules/.bin/http-server -p 8000 -a 0.0.0.0",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "package": "./node_modules/.bin/gulp package",
+    "package-demo": "./node_modules/.bin/gulp package-demo",
+    "image-resize": "./node_modules/.bin/gulp image-resize",
+    "watch-images": "./node_modules/.bin/gulp watch-images"
+  },
+  "author": "krues8dr",
+  "license": "UNLICENSED",
+  "description": "",
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-dest": "^0.2.3",
+    "gulp-image-resize": "^0.13.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-uglify-es": "^1.0.4",
+    "http-server": "^0.11.1",
+    "napa": "^3.0.0"
+  }
 }
