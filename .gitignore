@@ -1,0 +1,31 @@
+# Note: there's another .gitignore in the js folder!
+
+# Dependency directories
+node_modules/
+
+# Assets
+audio
+movies
+img
+fonts
+icon
+
+# Optional npm cache directory
+.npm
+
+# misc
+.sass-cache
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# System Files
+.DS_Store
+
+# SublimeText
+*.sublime-workspace
+*.sublime-project
