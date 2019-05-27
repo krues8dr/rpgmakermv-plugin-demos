@@ -10,33 +10,47 @@
 
   <link rel="stylesheet" type="text/css" href="/demo/shared/css/game.css">
   <link rel="stylesheet" type="text/css" href="/demo/shared/fonts/gamefont.css">
-  <title>Kru_Reputation</title>
+  <title>Kru_SkillTree Demo</title>
   <script type="text/javascript" src="js/plugins.js"></script>
 </head>
 <body style="background-color: black; color: white;">
-  <h1>Kru_Reputation Demo</h1>
+  <h1>Demo</h1>
   <div class="game-wrapper">
     <section class="game-instructions">
       <p>
-        <a href="https://github.com/krues8dr/rpgmakermv-plugins/wiki/Kru_Reputation">Documentation</a><br>
-        <a href="https://raw.githubusercontent.com/krues8dr/rpgmakermv-plugins/master/Kru_Reputation.js" target="_blank">Download</a><br>
+        <a href="https://github.com/krues8dr/rpgmakermv-plugins/wiki/${NAME}">Documentation</a><br>
+        <a href="https://raw.githubusercontent.com/krues8dr/rpgmakermv-plugins/master/${NAME}.js" target="_blank">Download</a><br>
         This plugin requires <a href="https://raw.githubusercontent.com/krues8dr/rpgmakermv-plugins/master/Kru_Core.js">Kru_Core</a>
+        and <a href="https://raw.githubusercontent.com/krues8dr/rpgmakermv-plugins/master/Kru_SkillCore.js">Kru_SkillCore</a>
       </p>
-      <p>
-        Go to the menu (press escape) and choose <strong class="keyword">Factions</strong> to see your rank with each faction.
-      </p>
-      <ul>
-        <li>The left NPC decreases your rank with the Blue Shield by 50 points.</li>
-        <li>The middle NPC increases your rank with the Red Hand by 50 points.</li>
-        <li>The right NPC runs a Red Hand shop that gives you a 30% discount if you are Familiar and a 50% discount if you are Known.</li>
-      </ul>
+
       <h2>Configuration Settings</h2>
+
+      <h3>White Mage class note</h3>
       <code>
-Menu Name: "Factions"<br>
-Reputation Levels: "Despised:-100, Hated:-50, Unknown:0, Familiar:50, Known:100"<br>
-Show Unknown Factions: true<br>
-Icons: "Glyphs"<br>
-Icon Size: "64"
+{"skills":[{"id":8,"location":[10,60]},{"id":11,"location":[160,60]}],"lines":[{"location":[118,78,154,78]}]}
+      </code>
+
+      <h3>Heal Skill (ID# 8)</h3>
+      <h4>Formula</h4>
+      <code>
+(a._stskills[item.id].level * 50)
+      </code>
+
+      <h4>Note</h4>
+      <code>
+{"max":10,"cost":{"mp": "cost += (a._stskills[item.id].level-1) * 2"}}
+      </code>
+
+      <h3>Heal All Skill (ID# 11)</h3>
+      <h4>Note</h4>
+      <code>
+{"max":10,"req":{"skill":[{"id":8,"level":5}]},"cost":{"mp": "cost += (a._stskills[item.id].level) * 5"}}
+      </code>
+
+      <h3>NPC Conditional Branch (Script)</h3>
+      <code>
+($gameActors._data[1]._stskills[8])
       </code>
       <p>
         <a href="/">Back to games.krues8dr.com</a>
