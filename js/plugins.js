@@ -3,5 +3,6 @@
 var $plugins =
 [
 {"name":"Kru_Demo","status":true,"description":"1.0.0 Helper for demos of plugins.","parameters":{"Path":"/demo/shared/","Container":"game"}},
-{"name":"Kru_Core","status":true,"description":"1.0.0 Shared base for many Krues8dr plugins","parameters":{"---General---":""}}
+{"name":"Kru_Core","status":true,"description":"1.0.0 Shared base for many Krues8dr plugins","parameters":{"---General---":""}},
+{"name":"Kru_Reputation","status":true,"description":"v1.0.0 Reputation system","parameters":{"Menu Name":"Factions","Reputation Levels":"Despised:-100, Hated:-50, Unknown:0, Familiar:50, Known:100","Show Unknown Factions":"true","Icons":"Glyphs","Icon Size":"64","Custom Icons":"[]"}}
 ];
