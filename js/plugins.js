@@ -3,5 +3,7 @@
 var $plugins =
 [
 {"name":"Kru_Demo","status":true,"description":"1.0.0 Helper for demos of plugins.","parameters":{"Path":"/demo/shared/","Container":"game"}},
-{"name":"Kru_Core","status":true,"description":"1.0.0 Shared base for many Krues8dr plugins","parameters":{"---General---":""}}
+{"name":"Kru_Core","status":true,"description":"1.0.0 Shared base for many Krues8dr plugins","parameters":{"---General---":""}},
+{"name":"Kru_SkillCore","status":true,"description":"1.0.0 Shared base for Krues8dr skill-related plugins","parameters":{"---General---":""}},
+{"name":"Kru_SkillTree","status":true,"description":"1.0.0 Skill Tree system","parameters":{"Skill Points":"1","Initial Points":"25"}}
 ];
