@@ -10,23 +10,55 @@
 
   <link rel="stylesheet" type="text/css" href="/demo/shared/css/game.css">
   <link rel="stylesheet" type="text/css" href="/demo/shared/fonts/gamefont.css">
-  <title>Demo</title>
+  <title>Kru_GameSeed Demo</title>
   <script type="text/javascript" src="js/plugins.js"></script>
 </head>
 <body style="background-color: black; color: white;">
-  <h1>Demo</h1>
+  <h1>Kru_GameSeed Demo</h1>
   <div class="game-wrapper">
     <section class="game-instructions">
       <p>
-        <a href="https://github.com/krues8dr/rpgmakermv-plugins/wiki/${NAME}">Documentation</a><br>
-        <a href="https://raw.githubusercontent.com/krues8dr/rpgmakermv-plugins/master/${NAME}.js" target="_blank">Download</a><br>
-        This plugin requires <a href="https://raw.githubusercontent.com/krues8dr/rpgmakermv-plugins/master/Kru_Core.js">Kru_Core</a>
+        <a href="https://github.com/krues8dr/rpgmakermv-plugins/wiki/Kru_GameSeed">Documentation</a><br>
+        <a href="https://raw.githubusercontent.com/krues8dr/rpgmakermv-plugins/master/Kru_GameSeed.js" target="_blank">Download</a><br>
+        This plugin is shown using <a href="http://himeworks.com/2015/10/custom-page-conditions-mv/">
+        Hime's Custom Page Conditions</a>
+      </p>
+      <p>
+        Each time you start a new game, a new game seed is generated. This seed
+        persists with your saved game, and will determine whether the east path
+        or west path is blocked by a torch.
       </p>
 
-      <h2>Configuration Settings</h2>
-      <code>
+      <h2>Right Torch Event Code</h2>
 
-      </code>
+<code class="pre">Comment : &lt;page condition&gt;
+If : Script : seedTest(10) <= 5
+  Plugin Command : activate_page
+: End
+Comment : &lt;/page condition&gt;</code>
+
+      <h2>Left Torch Event Code</h2>
+
+<code class="pre">Comment : &lt;page condition&gt;
+If : Script : seedTest(10) > 5
+  Plugin Command : activate_page
+: End
+Comment : &lt;/page condition&gt;</code>
+
+      <h2>NPC Event Code</h2>
+
+<code class="pre">Comment : &lt;page condition&gt;
+If : Script : seedTest(10) <= 5
+  Text: Actor1(1), Window, Bottom
+  :  : The path to the east is blocked! You must
+  :  : go west!
+: Else
+  Text: Actor1(1), Window, Bottom
+  :  : The path to the west is blocked! You must
+  :  : go east!
+: End
+Comment : &lt;/page condition&gt;</code>
+
       <p>
         <a href="/">Back to games.krues8dr.com</a>
       </p>
